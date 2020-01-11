@@ -170,7 +170,7 @@ JFileChooser fileChooser = new JFileChooser();
 
     private void btnChargerUnFichierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChargerUnFichierActionPerformed
         // TODO add your handling code here:
-        fileChooser.setCurrentDirectory(new java.io.File("C:\\Users\\Abdelhak\\Desktop\\School\\Projet COMP"));
+       // fileChooser.setCurrentDirectory(new java.io.File("C:\\Users\\Abdelhak\\Desktop\\School\\Projet COMP"));
 				fileChooser.setDialogTitle("Choisissez le fichier");
 				fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 				fileChooser.showOpenDialog(btnChargerUnFichier);
