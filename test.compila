@@ -1,0 +1,13 @@
+Start_Program
+Int_Number   i,j,Aft_5 ;;
+Give i :  23 ;;
+String : "compila" ;;
+Real_Number   Aft_2 ;;
+
+Affect j to k ;;
+Give Af34_2 : 123.54 ;;
+
+ShowMes : "ceci est un message" ;;
+ShowVal : i ;;
+//.ceci est un commentaire
+End_Program
