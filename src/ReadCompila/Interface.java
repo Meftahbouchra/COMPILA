@@ -8,32 +8,33 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author hp
  */
 public class Interface extends javax.swing.JFrame {
-JFileChooser fileChooser = new JFileChooser();
-	private String ChoosenFilePath;
-	private ReadFile fileReading;
-	private static final long serialVersionUID = 1L;
+
+    JFileChooser fileChooser = new JFileChooser();
+    private String ChoosenFilePath;
+    private ReadFile fileReading;
+    private static final long serialVersionUID = 1L;
+
     /**
      * Creates new form hh
      */
     public Interface() {
         initComponents();
         this.setTitle("Mon Analyseure lexical, syntaxique et  s\u00E9mantique");
-		this.setResizable(false);
-		this.setBounds(100, 100, 658, 630);
-		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.getContentPane().setLayout(null);
-		this.setVisible(true);
-		fileChooser.setFileFilter(new FileNameExtensionFilter("SNAIL","SNL","snl"));
-                btnLexicale.setEnabled(false);
-                btnSyntaxe.setEnabled(false);
-                        btnSemantique.setEnabled(false);
+        this.setResizable(false);
+        this.setBounds(100, 100, 658, 630);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.getContentPane().setLayout(null);
+        this.setVisible(true);
+        fileChooser.setFileFilter(new FileNameExtensionFilter("SNAIL", "SNL", "snl"));
+        btnLexicale.setEnabled(false);
+        btnSyntaxe.setEnabled(false);
+        btnSemantique.setEnabled(false);
     }
 
     /**
@@ -170,38 +171,39 @@ JFileChooser fileChooser = new JFileChooser();
 
     private void btnChargerUnFichierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChargerUnFichierActionPerformed
         // TODO add your handling code here:
-       // fileChooser.setCurrentDirectory(new java.io.File("C:\\Users\\Abdelhak\\Desktop\\School\\Projet COMP"));
-				fileChooser.setDialogTitle("Choisissez le fichier");
-				fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-				fileChooser.showOpenDialog(btnChargerUnFichier);
-				ChoosenFilePath = fileChooser.getSelectedFile().getAbsolutePath();
-				//lblFileSize.setText("Taille de fichier : "+fileChooser.getSelectedFile().length()+" octects");
-				//lblpath.setText(ChoosenFilePath);
-				btnLexicale.setEnabled(true);
-				
-				//awesome place i guess
-				fileReading = new ReadFile(ChoosenFilePath);
+        // fileChooser.setCurrentDirectory(new java.io.File("C:\\Users\\Abdelhak\\Desktop\\School\\Projet COMP"));
+        fileChooser.setDialogTitle("Choisissez le fichier");
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        fileChooser.showOpenDialog(btnChargerUnFichier);
+        ChoosenFilePath = fileChooser.getSelectedFile().getAbsolutePath();
+        //lblFileSize.setText("Taille de fichier : "+fileChooser.getSelectedFile().length()+" octects");
+        //lblpath.setText(ChoosenFilePath);
+        btnLexicale.setEnabled(true);
+
+        //awesome place i guess
+        fileReading = new ReadFile(ChoosenFilePath);
     }//GEN-LAST:event_btnChargerUnFichierActionPerformed
 
     private void btnLexicaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLexicaleActionPerformed
         // TODO add your handling code here:
         textArea.setText(fileReading.lexicalAnalysisFunction());
-				btnSyntaxe.setEnabled(true);
+        btnSyntaxe.setEnabled(true);
     }//GEN-LAST:event_btnLexicaleActionPerformed
 
     private void btnSyntaxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyntaxeActionPerformed
         // TODO add your handling code here:
-       /* textArea.setText(fileReading.syntaxAnalysisFunction());
+        /* textArea.setText(fileReading.syntaxAnalysisFunction());
 				if(fileReading.getErrorCount()==0) btnSemantique.setEnabled(true);*/
     }//GEN-LAST:event_btnSyntaxeActionPerformed
 
     private void btnSemantiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSemantiqueActionPerformed
         // TODO add your handling code here:
-       // textArea.setText(fileReading.SemanticAnalysisFunction());
+        // textArea.setText(fileReading.SemanticAnalysisFunction());
     }//GEN-LAST:event_btnSemantiqueActionPerformed
-public ReadFile getFileReadingObject() {
-		return fileReading;
-	}
+    public ReadFile getFileReadingObject() {
+        return fileReading;
+    }
+
     /**
      * @param args the command line arguments
      */
